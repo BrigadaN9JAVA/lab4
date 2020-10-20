@@ -1,0 +1,105 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("Масив:");
+        int[] arr;
+        arr = new int[5];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = ((int) (Math.random() * 20) + 5 - 10);
+            System.out.println(arr[i]);
+        }
+        System.out.println();
+
+        T9.general(arr);
+        System.out.println();
+
+        T39.general(arr);
+        System.out.println();
+
+        T62.general(arr);
+
+    }
+
+    static class T9 {
+
+        static void general(int[] arr) {
+
+            int max = arr[0];
+            for (int i = 1; i < arr.length; i++) {
+                max = Math.max(max, arr[i]);
+            }
+
+            int min = arr[0];
+
+            for (int j = 1; j < arr.length; j++) {
+                min = Math.min(min, arr[j]);
+            }
+            if (min >= max){
+                throw new IllegalArgumentException(" Param max must be bigger than min!!!");
+            }
+            else {
+                int s = max - min;
+
+                System.out.println("9)\nMаксимум :" + max + "\n\nMінімум :" + min + "\n\nРізниця максимуму та мінімуму: " + s);
+            }
+
+        }
+    }
+
+
+    static class T39 {
+
+        static void general(int[] arr) {
+
+            int max = arr[0];
+            for (int i = 1; i < arr.length; i++) {
+                max = Math.max(max, arr[i]);
+            }
+
+            int plast = arr[arr.length - 2];
+            int z = max - plast;
+            System.out.println("39) Різниця максимуму та передостаннього елементу: " + z);
+
+
+        }
+
+    }
+
+    static class T62 {
+
+        static void general(int[] arr) {
+            System.out.println("62)");
+            float [] arr1 ;
+            arr1 = new float[arr.length];
+            int min = arr[0];
+            for (int j = 1; j < arr.length; j++) {
+                min = Math.min(min, arr[j]);
+            }
+            if(min == 0){
+                System.out.println("min = 0 , усі елементи замінено на число 10: ");
+                for (int i = 0; i < arr.length; i++) {
+                arr[i] = 10;
+                System.out.println(arr[i]);
+            }
+                throw new IllegalArgumentException(" min не може дорівнювати 0!!!");
+
+
+            }
+            else {
+                System.out.println("Новий масив: ");
+
+                for (int i = 0; i < arr.length; i++) {
+                    arr1[i] = (float) arr[i] / min;
+                    System.out.println(arr1[i]);
+
+                }
+
+
+            }
+        }
+
+    }
+
+}
