@@ -12,7 +12,7 @@ public class Task9 {
 
     private static int calc(int N, int minRandom, int maxRandom) {
         if (N <= 0) throw new IllegalArgumentException(" Param N must be above zero!!!");
-        if (minRandom >= maxRandom) new IllegalArgumentException(" Param maxRandom must be bigger than minRandom!!!");
+        if (minRandom >= maxRandom) throw new IllegalArgumentException(" Param maxRandom must be bigger than minRandom!!!");
 
         int[] array = new int[N];
 
