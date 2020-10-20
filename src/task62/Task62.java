@@ -31,7 +31,7 @@ public class Task62 {
         int min = min(array);
 
         int[] tmp = new int[array.length];
-        System.arraycopy(array, 0, tmp, 0, array.length);   // Створення нового массиву і копіювання зі старого
+        System.arraycopy(array, 0, tmp, 0, array.length);
 
         if (min == 0) {
             for (int i = 0; i < tmp.length; i++) {
